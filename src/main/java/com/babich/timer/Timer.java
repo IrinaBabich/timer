@@ -41,12 +41,13 @@ public class Timer implements Runnable{
             }
             timeToFinish--;
         }
+        System.out.println(name + " has finished.");
     }
 
     public static void main(String[] args) {
-        Timer timer1 = new Timer("timer 1", 10);
-        Timer timer2 = new Timer("timer 2", 10);
-        Timer timer3 = new Timer("timer 3", 10);
+        Timer timer1 = new Timer("Timer 1", 10);
+        Timer timer2 = new Timer("Timer 2", 10);
+        Timer timer3 = new Timer("Timer 3", 10);
         Thread thread1 = new Thread(timer1);
         Thread thread2 = new Thread(timer2);
         Thread thread3 = new Thread(timer3);
