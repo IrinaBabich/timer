@@ -9,6 +9,27 @@ public class Timer implements Runnable{
     private String name;
     private int timeToFinish;
 
+    public Timer(String name, int timeToFinish) {
+        this.name = name;
+        this.timeToFinish = timeToFinish;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getTimeToFinish() {
+        return timeToFinish;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setTimeToFinish(int timeToFinish) {
+        this.timeToFinish = timeToFinish;
+    }
+
     @Override
     public void run() {
         while (timeToFinish > 0) {
@@ -20,5 +41,18 @@ public class Timer implements Runnable{
             }
             timeToFinish--;
         }
+    }
+
+    public static void main(String[] args) {
+        Timer timer1 = new Timer("timer 1", 10);
+        Timer timer2 = new Timer("timer 2", 10);
+        Timer timer3 = new Timer("timer 3", 10);
+        Thread thread1 = new Thread(timer1);
+        Thread thread2 = new Thread(timer2);
+        Thread thread3 = new Thread(timer3);
+
+        thread1.start();
+        thread2.start();
+        thread3.start();
     }
 }
