@@ -30,7 +30,7 @@ public class KeyboardReader implements Runnable{
     }
 
     public static void main(String[] args) {
-        ArrayList<String> arrayList = new ArrayList();
+        ArrayList<String> arrayList = new ArrayList<>();
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         KeyboardReader keyboardReader = new KeyboardReader(arrayList, 15);
         Thread thread = new Thread(keyboardReader);

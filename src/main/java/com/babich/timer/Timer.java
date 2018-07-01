@@ -38,6 +38,7 @@ public class Timer implements Runnable{
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
+                return;
             }
             timeToFinish--;
         }
